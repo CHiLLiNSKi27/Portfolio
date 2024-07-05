@@ -1,0 +1,358 @@
+$font-family-syne: "Syne";
+$font-family-overpass: "Overpass";
+$color-black: black;
+$color-white: #fffcf3;
+$color-highlight: #FF9900;
+$transition-fast: 0.5s;
+$transition-normal: 1s;
+$transition-slow: 0.8s;
+
+@mixin hover-effect {
+  &:hover {
+    color: $color-highlight;
+    transition: color $transition-fast;
+  }
+}
+
+.rotate-in-x {
+  animation: rotateInX 0.8s ease-out forwards,
+    colorChange 0.2s ease-out 0.5s forwards;
+  animation-fill-mode: forwards;
+}
+
+.rotate-out-x {
+  animation: rotateOutX 0.3s ease-out forwards;
+  animation-fill-mode: forwards;
+}
+
+.my-skills-container {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  width: 88vw;
+  height: auto;
+  border: 4px solid $color-black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    display: inline-block;
+    font-size: 78px;
+    font-weight: 800;
+    font-family: $font-family-syne;
+    padding: 28px;
+    margin-top: -86px;
+    background-color: $color-white;
+    z-index: 200;
+    color: $color-highlight;
+    text-shadow: 0 10.36px 8.896px #c4b59d, 0 -2px 1px #fff;
+    @include hover-effect;
+  }
+
+  .icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 82px;
+    padding: 10px;
+    margin-bottom: 82px;
+    transition: transform 0.3s ease;
+
+    img {
+      width: 75px;
+      height: 75px;
+      object-fit: contain;
+      transition: transform $transition-normal ease;
+      transform-origin: 50% 50%;
+    }
+
+    .skill-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: calc(15% - 40px);
+
+      &:hover {
+        p {
+          color: $color-highlight;
+        }
+
+        img {
+          animation: circleMotion $transition-normal ease-in-out forwards;
+        }
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: $font-family-overpass;
+      }
+    }
+  }
+}
+
+.animate-icon p {
+  color: $color-highlight;
+}
+
+.animate-icon img {
+  animation: circleMotion 0.6s ease-in-out forwards;
+}
+
+.highlight-text {
+  color: $color-highlight;
+  transition: color $transition-slow;
+  text-shadow: 0px 2px 4px rgba(0, 156, 118, 0.49);
+}
+
+@keyframes colorChange {
+  0% {
+    color: $color-black;
+  }
+  100% {
+    color: $color-highlight;
+  }
+}
+
+@keyframes rotateInX {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateOutX {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes circleMotion {
+  0% {
+    transform: translate(0, 0) scale(1) rotateY(0deg);
+  }
+  12% {
+    transform: translate(-5px, 0) scale(0.9) rotateY(30deg);
+  }
+  25% {
+    transform: translate(-10px, 0) scale(0.8) rotateY(60deg);
+  }
+  50% {
+    transform: translate(-10px, -10px) scale(0.6) rotateY(180deg);
+  }
+  75% {
+    transform: translate(10px, -10px) scale(0.8) rotateY(270deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotateY(360deg);
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .my-skills-container {
+    width: 88vw;
+  }
+}
+
+@media (max-width: 1025px) {
+  .my-skills-container {
+    width: 72vw;
+
+    h2 {
+      font-size: 72px;
+      margin-top: -78px;
+    }
+    .icon-container {
+      gap: 90px;
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .my-skills-container {
+    width: 72vw;
+
+    h2 {
+      font-size: 68px;
+    }
+    .icon-container {
+      gap: 90px;
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .my-skills-container {
+    width: 78vw;
+  }
+}
+
+@media (max-width: 660px) {
+  .my-skills-container {
+    img {
+      width: 90px;
+      height: 90px;
+    }
+
+    h2 {
+      font-size: 58px;
+      margin-top: -72px;
+    }
+  }
+
+  .skill-icons {
+    width: calc(calc(14.333% - 9px));
+  }
+}
+
+@media (max-width: 730px) {
+  .my-skills-container {
+    width: 88vw;
+  }
+}
+
+@media (max-width: 550px) {
+  .my-skills-container {
+    h2 {
+      font-size: 42px;
+      margin-top: -48px;
+      padding: 18px;
+    }
+
+    .icon-container {
+      margin-bottom: 29px;
+      padding: 26px;
+      gap: 80px;
+
+      img {
+        width: 48px;
+        height: 56px;
+      }
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .my-skills-container {
+    width: 78vw;
+    h2 {
+      font-size: 38px;
+      margin-top: -48px;
+      padding: 18px;
+    }
+
+    .icon-container {
+      margin-bottom: 4px;
+      padding: 2px;
+      gap: 98px;
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  .my-skills-container {
+    width: 85vw;
+  }
+}
+
+@media (max-width: 376px) {
+  .my-skills-container {
+    width: 81vw;
+    h2 {
+      font-size: 38px;
+      margin-top: -48px;
+      padding: 18px;
+    }
+
+    .icon-container {
+      margin-bottom: 4px;
+      padding: 2px;
+      gap: 96px;
+
+      img {
+        width: 48px;
+        height: 56px;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .my-skills-container {
+    width: 88vw;
+    h2 {
+      font-size: 34px;
+      margin-top: -48px;
+      padding: 18px;
+    }
+
+    .icon-container {
+      margin-bottom: 4px;
+      padding: 2px;
+      gap: 96px;
+
+      .skill-icons {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .icon-container {
+      img {
+        width: 44px;
+        height: 52px;
+      }
+    }
+  }
+}
+
+@media (max-width: 315px) {
+  .my-skills-container {
+    width: 96vw;
+
+    h2 {
+      font-size: 30px;
+      margin-top: -37px;
+      padding: 13px;
+    }
+
+    .icon-container {
+      margin-bottom: 4px;
+      padding: 2px;
+      gap: 91px;
+
+      .skill-icons {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .icon-container {
+      img {
+        width: 38px;
+        height: 42px;
+      }
+    }
+  }
+}

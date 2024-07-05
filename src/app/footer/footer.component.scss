@@ -1,0 +1,132 @@
+$font-family-overpass: "Overpass";
+$color-black: black;
+$color-white: white;
+$transition-fast: 0.2s ease-in-out;
+
+@mixin hover-effect {
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+.footer-area {
+  background-color: $color-black;
+  height: 150px;
+  margin-top: -1px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+
+    img {
+      width: 66px;
+      padding-bottom: 16px;
+    }
+
+    span {
+      color: $color-white;
+      font-size: 22px;
+      font-family: $font-family-overpass;
+    }
+  }
+
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    padding-right: 100px;
+
+    .icons {
+      img {
+        margin-right: 40px;
+        margin-bottom: 16px;
+        width: 40px;
+        transition: $transition-fast;
+        @include hover-effect;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $color-white;
+      font-family: $font-family-overpass;
+      font-size: 20px;
+      padding-left: 15px;
+      transition: $transition-fast;
+      @include hover-effect;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .contact-area {
+    clip-path: polygon(0% 0, 100% 10%, 100% 100%, 0% 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-area {
+    background-color: $color-black;
+    height: 311px;
+    margin-top: -53px;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding-bottom: 47px;
+
+    .left-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 0px;
+      margin-top: -18px;
+
+
+      img {
+        width: 70px;
+      }
+
+      span {
+        color: $color-white;
+        font-size: 22px;
+        font-family: $font-family-overpass;
+      }
+    }
+
+    .right-side {
+      display: flex;
+      flex-direction: column;
+      padding-right: 0px;
+
+      .icons {
+        img {
+          margin-right: 25px;
+          margin-left: 25px;
+          margin-bottom: 16px;
+          width: 40px;
+          transition: $transition-fast;
+          @include hover-effect;
+        }
+      }
+
+      a {
+        position: relative;
+        bottom: -104px;
+        text-decoration: none;
+        color: $color-white;
+        font-family: $font-family-overpass;
+        font-size: 22px;
+        padding-left: 0px;
+        transition: $transition-fast;
+        margin-left: auto;
+        margin-right: auto;
+        @include hover-effect;
+      }
+    }
+  }
+}

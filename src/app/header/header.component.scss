@@ -1,0 +1,64 @@
+.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+    height: 100px;
+
+}
+
+.logo-container {
+    font-size: 30px;
+    font-family: arial black;
+}
+
+.top-container {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FF9900;
+    text-align: center;
+    font-family: Overpass;
+    font-weight: 700;
+    font-size: 48px;
+    text-shadow: 0 10.36px 8.896px #c4b59d, 0 -2px 1px #fff;
+
+        >p {
+            margin-top: 0px;
+        }
+}
+
+.menu-btn {
+    >img{
+        width: 40px;
+        height: auto;
+    }
+}
+
+h1{
+    color: black;
+    font-family: Syne;
+    margin-top: 130px;
+    margin-bottom: 24px;
+    font-size: 100px;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 0 10.36px 8.896px #c4b59d, 0 -2px 1px #fff;
+    letter-spacing: -2.5%;
+}
+
+.scroll-container{
+    height:200px;
+}
